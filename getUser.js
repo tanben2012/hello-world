@@ -1,0 +1,1 @@
+JSONP_getUsers(["paco","john","lili"]);
