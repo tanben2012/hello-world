@@ -144,7 +144,7 @@ table{border-collapse:collapse;border-spacing:0;}
     <div class="bg"></div>
     <div class="ct">
         注册即送<span class="f-fs16 f-cy">188元</span>红包+<span class="f-fs16 f-cy">10000元</span>体验金+<span class="f-fs16 f-cy">0.6%</span>加息券
-        <a class="u-btn" href="https://www.qigehulu.com/appdown.html">立即参与</a>
+        <a class="u-btn" href="https://www.qigehulu.com/sign/appShare?invitationcode=225517&channelMarker=501&from=singlemessage&isappinstalled=1">立即参与</a>
     </div>
 </div>
 
@@ -153,9 +153,7 @@ table{border-collapse:collapse;border-spacing:0;}
 $(function(){
     var param = GetQueryString("channel");
     var registerguide = GetQueryString("registerguide");
-    if(registerguide == 1){
-    	$(".m-btm").show();
-    }
+    var invitationcode = GetQueryString("invitationcode");
     /*$.ajax({
         type : "Get",
         url : "https://www.qigehulu.com/flow/accessAmount?from=" + param + "&activity=referrals",
@@ -163,6 +161,12 @@ $(function(){
         success : function(data) {
         }
     })*/
+    if(registerguide == 1){
+    	$(".m-btm").show();
+    }
+    $(".u-btn").click(function(){
+    	window.location.href="https://www.qigehulu.com/sign/appShare?invitationcode="+invitationcode+"&channelMarker=501";
+    })
 });
 //获取地址栏参数
 function GetQueryString(name){
